@@ -1,0 +1,131 @@
+#!/bin/bash
+clear
+cd $HOME
+cd ..
+cd usr
+cd etc
+rm motd >/dev/null 2>&1
+cd $HOME
+echo "Обновление программ будет произведено в фоновом режиме."
+bash -c 'apt-get -y update >/dev/null 2>&1 & disown'
+bash -c 'apt-get -y upgrade >/dev/null 2>&1 & disown'
+echo "Wait 15 seconds..."
+sleep 15
+clear
+apt -y install unstable-repo >/dev/null 2>&1
+apt -y install x11-repo >/dev/null 2>&1
+apt -y install toilet screenfetch figlet >/dev/null 2>&1
+clear
+screenfetch
+sleep 5 
+clear
+toilet --metal Termux
+toilet Starter
+echo "By Dj Lunight. TG: @DjLunight"
+echo " "
+echo "-------------------------"
+echo "Сейчас начнется процесс установки программ, общий вес 600MB~"
+echo "Это займет некотрое время"
+sleep 8
+clear
+toilet --gay Python
+sleep 1
+clear
+echo "installing Python 3..."
+apt -y install python >/dev/null 2>&1
+clear
+toilet --gay Python 2 
+sleep 1
+clear
+echo "installing Python 2..."
+apt -y install python2 >/dev/null 2>&1
+clear
+toilet --metal Git
+sleep 1
+clear
+echo "installing Git..."
+apt -y install git >/dev/null 2>&1
+clear
+figlet Wget
+sleep 1
+clear
+echo "installing Wget..."
+apt -y install wget >/dev/null 2>&1
+clear
+figlet Curl
+sleep 1
+clear
+echo "installing Curl..."
+apt -y install curl >/dev/null 2>&1
+clear
+toilet --metal PHP
+sleep 1
+clear
+echo "installing PHP..."
+apt -y install php >/dev/null 2>&1
+clear
+toilet --gay Clang
+sleep 1
+clear
+echo "installing Clang..."
+apt -y install clang >/dev/null 2>&1
+clear
+toilet --metal MC
+sleep 1
+clear
+echo "installing MC..."
+apt -y install mc >/dev/null 2>&1
+clear
+toilet --metal SqlMap
+sleep 1
+echo "installing SqlMap..."
+apt -y install sqlmap >/dev/null 2>&1
+clear
+echo "installing proot..."
+apt -y install proot >/dev/null 2>&1
+clear
+echo "installing ping..."
+apt -y install ping >/dev/null 2>&1
+clear
+echo "installing traceroute..."
+apt -y install traceroute >/dev/null 2>&1
+clear
+echo "Cleaning packets cache.."
+apt clean
+clear
+apt -y autoremove >/dev/null 2>&1
+clear
+toilet Done!
+echo "Стандартные программы установлены." 
+echo "Далее будут установлены модули Python 3"
+sleep 5
+clear
+toilet --gay Python 3
+echo "Установка необходимых модулей."
+sleep 5
+clear 
+toilet --gay Colorama
+sleep 1
+echo "installing module Colorama..."
+pip install colorama >/dev/null 2>&1
+clear
+figlet Shodan
+sleep 1
+echo "installing module Shodan... "
+pip install shodan >/dev/null 2>&1
+clear
+toilet Done!
+echo "Установка модулей завершена." 
+echo "Далее будут клонированы необходимые репозитории GitHub."
+sleep 5
+clear
+toilet --metal GitHub
+figlet Repos
+sleep 5
+clear
+figlet SmsHam
+echo "The Sms Spammer"
+sleep 3
+clear
+git clone https://github.com/termux-lab/smsham/
+clear
